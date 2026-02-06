@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "AISearch-Blocker",
+  "version": "1.0",
+
+  "description": "Blocks AI Overview, made for FireFox.",
+
+  "host_permissions": [
+    "*://*.google.com/search*"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.google.com/search*"
+      ],
+      "js": ["script.js"],
+      "run_at": "document_start"
+    }
+  ],
+
+  "action": {
+    "default_title": "AISearch-Blocker",
+    "default_popup": "/popup.html"
+  },
+
+  "permissions": [
+    "storage",
+    "scripting"
+  ]
+
+}
